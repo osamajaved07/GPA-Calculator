@@ -1,6 +1,6 @@
 # gpa_calculator
 
-A new Flutter project.
+This is a Flutter GPA calculator App where you can calculate your GPA easily according to your numbers of course.
 
 ## Getting Started
 
