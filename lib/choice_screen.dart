@@ -14,15 +14,18 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-
   int? selectedOption;
 
   List<TextEditingController> controllers = [];
 
-  
+
   int? numFieldsToFill;
 
+
+
   Color _inputTextColor = Colors.white;
+
+
 
   @override
 
@@ -30,9 +33,13 @@ class _HomescreenState extends State<Homescreen> {
 
     super.initState();
 
+
+
     controllers = List.generate(6, (index) => TextEditingController());
 
   }
+
+
 
   @override
 
@@ -40,7 +47,10 @@ class _HomescreenState extends State<Homescreen> {
 
     controllers.forEach((controller) => controller.dispose());
 
+
+
     super.dispose();
+
   }
 
 
@@ -49,9 +59,14 @@ class _HomescreenState extends State<Homescreen> {
 
     double totalGrade = 0.0;
 
+
+
     int totalCredits = 0;
 
+
+
     bool allFieldsFilled = true;
+
 
 
     if (numFieldsToFill != null) {
@@ -60,15 +75,23 @@ class _HomescreenState extends State<Homescreen> {
 
         String textGrade = controllers[i].text.trim();
 
+
+
         if (textGrade.isEmpty) {
 
           allFieldsFilled = false;
+
+
 
           break;
 
         }
 
+
+
         double grade = double.parse(textGrade);
+
+
 
         totalCredits++;
 
@@ -91,6 +114,7 @@ class _HomescreenState extends State<Homescreen> {
           totalGrade += 3.4;
 
         } else if (grade >= 71 && grade <= 74) {
+
           totalGrade += 3.0;
 
         } else if (grade >= 68 && grade <= 70) {
@@ -122,13 +146,20 @@ class _HomescreenState extends State<Homescreen> {
           totalGrade += 0.0;
 
         }
+
       }
 
 
+
       if (allFieldsFilled) {
+
         // Calculate the average GPA
 
+
+
         double averageGPA = totalGrade / totalCredits;
+
+
 
         return averageGPA;
 
@@ -140,9 +171,12 @@ class _HomescreenState extends State<Homescreen> {
 
     }
 
+
+
     return 0.0; // Default value
 
   }
+
 
 
   void _showDialog() {
@@ -159,13 +193,16 @@ class _HomescreenState extends State<Homescreen> {
 
           title: Text("Alert"),
 
-          content: Text('Please fill all fields', style: TextStyle(
+          content: Text(
 
-            color: Color.fromARGB (255, 54, 69, 79)
+            'Please fill all fields',
 
-          ),),
+            style: TextStyle(color: Color.fromARGB(255, 54, 69, 79)),
+
+          ),
 
           actions: [
+
             TextButton(
 
               onPressed: () {
@@ -183,6 +220,7 @@ class _HomescreenState extends State<Homescreen> {
         );
 
       },
+
     );
 
   }
@@ -200,6 +238,7 @@ class _HomescreenState extends State<Homescreen> {
   }
 
 
+
   @override
 
   Widget build(BuildContext context) {
@@ -211,6 +250,7 @@ class _HomescreenState extends State<Homescreen> {
       appBar: AppBar(
 
         backgroundColor: Color.fromARGB(255, 0, 128, 128),
+
         title: Text(
 
           "GPA Calculator",
@@ -231,7 +271,14 @@ class _HomescreenState extends State<Homescreen> {
 
             onPressed: _refreshTextFields,
 
-            icon: Icon(Icons.refresh,color: Colors.white,),
+            icon: Icon(
+
+              Icons.refresh,
+
+              color: Colors.white,
+
+
+            ),
 
           ),
 
@@ -261,7 +308,10 @@ class _HomescreenState extends State<Homescreen> {
 
                         ? selectedOptions.first.value as int
 
+
                         : null;
+
+
 
                     numFieldsToFill = selectedOption;
 
@@ -303,40 +353,30 @@ class _HomescreenState extends State<Homescreen> {
 
                     padding: const EdgeInsets.only(top: 28.0),
 
-
-
-
-
-
-
                     child: TextField(
-                      
 
-                     onChanged: (value) {
+                      onChanged: (value) {
 
-                // Example: Change text color based on input length
-
-                setState(() {
-
-                  if (value.length > 2) {
-
-                    _inputTextColor = Colors.red; 
-
-                  } else {
-
-                    _inputTextColor = Colors.white;
-
-                  }
-
-                });
-
-              },
+                        // Example: Change text color based on input length
 
 
 
-              style: TextStyle(color: _inputTextColor),
+                        setState(() {
 
+                          if (value.length > 2) {
+                            _inputTextColor = Colors.red;
 
+                          } else {
+
+                            _inputTextColor = Colors.white;
+
+                          }
+
+                        });
+
+                      },
+
+                      style: TextStyle(color: _inputTextColor),
 
                       controller: controllers[index],
 
@@ -346,19 +386,19 @@ class _HomescreenState extends State<Homescreen> {
 
                       decoration: InputDecoration(
 
-
-
                         labelStyle: TextStyle(color: Colors.white),
 
                         labelText: 'Course ${index + 1}',
-
                         border: OutlineInputBorder(
 
                             borderSide: BorderSide(color: Colors.white)),
 
                         focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
 
-                          borderSide: BorderSide(color: Color.fromARGB(255, 227, 227, 227), width: 4),
+                              color: Color.fromARGB(255, 227, 227, 227),
+
+                              width: 4),
 
                         ),
 
@@ -371,7 +411,6 @@ class _HomescreenState extends State<Homescreen> {
                     ),
 
                   ),
-
                 ),
 
               SizedBox(height: 22),
@@ -390,6 +429,8 @@ class _HomescreenState extends State<Homescreen> {
 
                   double calculatedGPA = gpaCalc();
 
+
+
                   if (calculatedGPA != 1000.0) {
 
                     Navigator.push(
@@ -398,7 +439,9 @@ class _HomescreenState extends State<Homescreen> {
 
                       MaterialPageRoute(
 
-                          builder: (context) => GPA_Show_Screen(gpa: calculatedGPA)),
+                          builder: (context) =>
+
+                              GPA_Show_Screen(gpa: calculatedGPA)),
 
                     );
 
@@ -414,11 +457,7 @@ class _HomescreenState extends State<Homescreen> {
 
                   "Calculate",
 
-                  style: TextStyle(color: Colors.white,
-
-                  fontSize: 16),
-
-
+                  style: TextStyle(color: Colors.white, fontSize: 16),
 
                 ),
 
@@ -433,8 +472,69 @@ class _HomescreenState extends State<Homescreen> {
       ),
 
     );
+
   }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
