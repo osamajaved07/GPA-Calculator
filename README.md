@@ -5,7 +5,7 @@ This is a Flutter **GPA Calculator Application**  where you can calculate your G
 
 ## Installation
 
-Get the APK file from the  [apk_folder](https://drive.google.com/file/d/17oVrNiqeRAAB7hqs1ChtUpRjtQdCUMsv/view?usp=sharing).
+Get the APK file from the  [apk_folder](https://github.com/osamajaved07/GPA-Calculator/tree/master/apk_folder).
 
 ## Features
 Are you tired of manually calculating your GPA and struggling to keep track of your grades? The GPA Calculator app is here to simplify your academic life. Whether you're a student, educator, or anyone in between, this app offers a user-friendly solution for managing your grades and computing your GPA. Let's explore its features in detail:
