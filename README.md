@@ -12,24 +12,24 @@ Are you tired of manually calculating your GPA and struggling to keep track of y
 
 **1. Select Total Number of Courses:**
 -Users begin by selecting the total number of courses they are taking from a dropdown menu.
--This selection determines the number of text fields that will be displayed for entering course marks.
+This selection determines the number of text fields that will be displayed for entering course marks.
 
 **2. Add Course Obtained Marks:**
 -Once the user selects the total number of courses, the app dynamically generates text fields for entering the obtained marks for each course.
--Users can input their marks in the corresponding text fields.
+Users can input their marks in the corresponding text fields.
 
 **3. Calculate GPA:**
 -After entering the marks for all courses, users can hit the "Calculate" button to compute their GPA.
--The app calculates the GPA based on the entered marks and displays the result on the GPA Show Screen.
--GPA calculation follows a predefined formula, taking into account the grading scale for each course.
+The app calculates the GPA based on the entered marks and displays the result on the GPA Show Screen.
+GPA calculation follows a predefined formula, taking into account the grading scale for each course.
 
 **4. View Calculated GPA:**
 -Upon calculation, the app navigates to the GPA Show Screen, where users can view their calculated GPA.
--The GPA is displayed in a clear and stylish manner, making it easy for users to interpret and understand their academic performance.
+The GPA is displayed in a clear and stylish manner, making it easy for users to interpret and understand their academic performance.
 
 **5. Refresh Text Fields:**
 -Users have the option to refresh the text fields by tapping on a refresh icon, allowing them to start over and input new marks if needed.
--This feature ensures flexibility and ease of use, enabling users to make changes or corrections as necessary.
+This feature ensures flexibility and ease of use, enabling users to make changes or corrections as necessary.
 
 With these functionalities, your GPA Calculator app provides users with a convenient and efficient tool for managing their academic grades and calculating their GPA accurately.
 
