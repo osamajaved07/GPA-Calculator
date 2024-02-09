@@ -1,1 +1,2 @@
-*.dart linguist-language=Dart
+*.dart linguist-detectable=true
+* linguist-detectable=false
